@@ -19,21 +19,53 @@
     </nav>
   </header>
 
-  <main class="galeria">
-    <h2>Prévia de Fotos</h2>
-    <div class="grid-fotos">
+  <main>
+<h2>Prévia de Fotos</h2>
+<div class="grid-fotos">
       <img src="imgs/foto1.jpg" alt="Foto Yumi 1">
       <img src="imgs/foto2.jpg" alt="Foto Yumi 2">
       <img src="imgs/foto3.jpg" alt="Foto Yumi 3">
       <img src="imgs/foto4.jpg" alt="Foto Yumi 4">
       <img src="imgs/foto5.jpg" alt="Foto Yumi 5">
+      <img src="imgs/foto6.jpg" alt="Foto Yumi 6">
+      <img src="imgs/foto7.jpg" alt="Foto Yumi 7">
+      <img src="imgs/foto8.jpg" alt="Foto Yumi 8">
+      <img src="imgs/foto9.jpg" alt="Foto Yumi 9">
+      <img src="imgs/foto10.jpg" alt="Foto Yumi 10">
+      <img src="imgs/foto11.jpg" alt="Foto Yumi 11">
+      <img src="imgs/foto12.jpg" alt="Foto Yumi 12">
+      <img src="imgs/foto13.jpg" alt="Foto Yumi 13">
+      <img src="imgs/foto14.jpg" alt="Foto Yumi 14">
+      <img src="imgs/foto15.jpg" alt="Foto Yumi 15">
+        <img src="imgs/foto16.jpg" alt="Foto Yumi 16">
+          <img src="imgs/foto17.jpg" alt="Foto Yumi 17">
+            <img src="imgs/foto18.jpg" alt="Foto Yumi 18">
       <!-- Adicione mais imagens -->
     </div>
-    <p class="aviso">Estas são apenas prévias. Para acessar o conteúdo completo, veja nossos planos VIP.</p>
-  </main>
+<p class="aviso">Estas são apenas prévias. Para acessar o conteúdo completo, veja nossos planos VIP.</p>
+</main>
 
   <footer>
     <p>© 2025 Yumi Oficial. +18</p>
   </footer>
+
+  <script>
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'F12') e.preventDefault();
+      if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) e.preventDefault();
+      if (e.ctrlKey && e.key === 'u') e.preventDefault();
+      if (e.key === 'PrintScreen') {
+        navigator.clipboard.writeText("Ação bloqueada!");
+        alert("Captura de tela desativada.");
+        e.preventDefault();
+      }
+    });
+    setInterval(() => {
+      navigator.clipboard.readText().then(text => {
+        if (text === '') console.clear();
+      }).catch(() => {});
+    }, 3000);
+  </script>
 </body>
 </html>

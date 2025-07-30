@@ -19,19 +19,38 @@
     </nav>
   </header>
 
-  <main class="home">
-    <section class="hero">
-      <h2>Bem-vindo ao site da Yumi</h2>
-      <p>Veja um pouco do meu conteúdo exclusivo. Escolha abaixo o que deseja explorar:</p>
-      <div class="cta-buttons">
-        <a href="fotos.html" class="btn">Ver Fotos</a>
-        <a href="videos.html" class="btn">Ver Vídeos</a>
-      </div>
-    </section>
-  </main>
+  <main>
+<section class="hero">
+  <h2>Bem-vindo ao site da Yumi</h2>
+  <p>Veja um pouco do meu conteúdo exclusivo. Escolha abaixo o que deseja explorar:</p>
+  <div class="cta-buttons">
+    <a href="fotos.html" class="btn">Ver Fotos</a>
+    <a href="videos.html" class="btn">Ver Vídeos</a>
+  </div>
+</section>
+</main>
 
   <footer>
-    <p>© 2025 Yumi Oficial. Conteúdo +18. Todos os direitos reservados.</p>
+    <p>© 2025 Yumi Oficial. +18</p>
   </footer>
+
+  <script>
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'F12') e.preventDefault();
+      if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) e.preventDefault();
+      if (e.ctrlKey && e.key === 'u') e.preventDefault();
+      if (e.key === 'PrintScreen') {
+        navigator.clipboard.writeText("Ação bloqueada!");
+        alert("Captura de tela desativada.");
+        e.preventDefault();
+      }
+    });
+    setInterval(() => {
+      navigator.clipboard.readText().then(text => {
+        if (text === '') console.clear();
+      }).catch(() => {});
+    }, 3000);
+  </script>
 </body>
 </html>

@@ -19,8 +19,8 @@
     </nav>
   </header>
 
-  <main class="galeria">
-    <h2>Prévia de Vídeos</h2>
+  <main>
+<h2>Prévia de Vídeos</h2>
     <div class="grid-videos">
       <video controls muted width="300">
         <source src="videos/video1.mp4" type="video/mp4">
@@ -30,6 +30,18 @@
         <source src="videos/video2.mp4" type="video/mp4">
         Seu navegador não suporta vídeo.
       </video>
+           <video controls muted width="300">
+        <source src="videos/video3.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      </video>
+           <video controls muted width="300">
+        <source src="videos/video4.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      </video>
+           <video controls muted width="300">
+        <source src="videos/video5.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      </video>
     </div>
     <p class="aviso">Apenas prévias disponíveis. Assine para ver o conteúdo completo.</p>
   </main>
@@ -37,5 +49,24 @@
   <footer>
     <p>© 2025 Yumi Oficial. +18</p>
   </footer>
+
+  <script>
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'F12') e.preventDefault();
+      if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) e.preventDefault();
+      if (e.ctrlKey && e.key === 'u') e.preventDefault();
+      if (e.key === 'PrintScreen') {
+        navigator.clipboard.writeText("Ação bloqueada!");
+        alert("Captura de tela desativada.");
+        e.preventDefault();
+      }
+    });
+    setInterval(() => {
+      navigator.clipboard.readText().then(text => {
+        if (text === '') console.clear();
+      }).catch(() => {});
+    }, 3000);
+  </script>
 </body>
 </html>
