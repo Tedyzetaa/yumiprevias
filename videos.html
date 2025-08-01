@@ -20,28 +20,43 @@
   </header>
 
   <main>
-<h2>Prévia de Vídeos</h2>
+    <h2>Prévia de Vídeos</h2>
     <div class="grid-videos">
-      <video controls muted width="300">
-        <source src="videos/video1.mp4" type="video/mp4">
-        Seu navegador não suporta vídeo.
-      </video>
-      <video controls muted width="300">
-        <source src="videos/video2.mp4" type="video/mp4">
-        Seu navegador não suporta vídeo.
-      </video>
-           <video controls muted width="300">
-        <source src="videos/video3.mp4" type="video/mp4">
-        Seu navegador não suporta vídeo.
-      </video>
-           <video controls muted width="300">
-        <source src="videos/video4.mp4" type="video/mp4">
-        Seu navegador não suporta vídeo.
-      </video>
-           <video controls muted width="300">
-        <source src="videos/video5.mp4" type="video/mp4">
-        Seu navegador não suporta vídeo.
-      </video>
+      <div style="position:relative; aspect-ratio:16/9;">
+        <iframe loading="lazy" title="Gumlet video player"
+          src="https://play.gumlet.io/embed/688d272d69cc5f5f002283de"
+          style="border:none; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"
+          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
+        </iframe>
+      </div>
+      <div style="position:relative; aspect-ratio:16/9;">
+        <iframe loading="lazy" title="Gumlet video player"
+          src="https://play.gumlet.io/embed/688d272d69cc5f5f002283c3"
+          style="border:none; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"
+          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
+        </iframe>
+      </div>
+      <div style="position:relative; aspect-ratio:16/9;">
+        <iframe loading="lazy" title="Gumlet video player"
+          src="https://play.gumlet.io/embed/688d272d0f894537edb08e7a"
+          style="border:none; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"
+          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
+        </iframe>
+      </div>
+      <div style="position:relative; aspect-ratio:16/9;">
+        <iframe loading="lazy" title="Gumlet video player"
+          src="https://play.gumlet.io/embed/688d272d69cc5f5f002283dc"
+          style="border:none; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"
+          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
+        </iframe>
+      </div>
+      <div style="position:relative; aspect-ratio:16/9;">
+        <iframe loading="lazy" title="Gumlet video player"
+          src="https://play.gumlet.io/embed/688d272d8bcbb4476abc215d"
+          style="border:none; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"
+          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
+        </iframe>
+      </div>
     </div>
     <p class="aviso">Apenas prévias disponíveis. Assine para ver o conteúdo completo.</p>
   </main>
@@ -51,6 +66,14 @@
   </footer>
 
   <script>
+    document.addEventListener('visibilitychange', function() {
+      if (document.hidden) {
+        document.body.classList.add('blur-content');
+      } else {
+        document.body.classList.remove('blur-content');
+      }
+    });
+
     document.addEventListener('contextmenu', e => e.preventDefault());
     document.addEventListener('keydown', function(e) {
       if (e.key === 'F12') e.preventDefault();
