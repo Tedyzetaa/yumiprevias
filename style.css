@@ -96,15 +96,41 @@ main {
   border: 2px solid #333;
 }
 
-.foto-item .watermark {
+/* Contêiner que centraliza a marca d'água completa (texto e logo) */
+.watermark-container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+}
+
+/* Estilo para a marca d'água de texto */
+.watermark-text {
+  /* Deixando o texto mais branco e com maior opacidade */
+  color: rgba(255, 255, 255, 0.8);
   font-size: 2.5em;
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  user-select: none;
+  pointer-events: none;
+  display: block;
+  white-space: nowrap;
+}
+
+/* Adiciona a imagem do Telegram como um elemento após o texto */
+.watermark-text::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: 5px auto 0;
+  background-image: url('imgs/telegram_logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* Deixando o logo mais visível */
+  opacity: 0.8;
   user-select: none;
   pointer-events: none;
 }
